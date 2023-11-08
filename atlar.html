@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            justify-content: space-around;
+        }
+        .horses{
+            display: grid;
+            grid-template-rows: auto auto auto auto;
+            gap: 20px;
+        }
+        img{
+            width: 150px;
+            height: 100px;
+        }
+        button{
+            margin: 20px 0px;
+            width: 75px;
+            height: 50px;
+            background-color: rgb(195, 255, 0);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="horses">
+            <button onclick="myFunction()">Start</button>
+            <img id="1" src="https://e7.pngegg.com/pngimages/737/758/png-clipart-horse-a-running-horse-horse-animals.png" alt="">
+            <img id="2" src="https://e7.pngegg.com/pngimages/737/758/png-clipart-horse-a-running-horse-horse-animals.png" alt="">
+            <img id="3" src="https://e7.pngegg.com/pngimages/737/758/png-clipart-horse-a-running-horse-horse-animals.png" alt="">
+        </div>
+        <div style="width: 20px; height: 100vh; background-color: red;"></div>
+    </div>
+    <script>
+
+
+        var a = 0
+        var b = 0
+        var c = 0
+
+
+
+        function start() {
+            var interval = setInterval(() => {
+
+
+                var x = Math.floor(Math.random() * 50)
+                var y = Math.floor(Math.random() * 50)
+                var z = Math.floor(Math.random() * 50)
+
+                a += x
+                b += y
+                c += z
+
+                const id1 = document.getElementById("1")
+                const id2 = document.getElementById("2")
+                const id3 = document.getElementById("3")
+
+                id1.style.marginLeft = a + "px"
+                id2.style.marginLeft = b + "px"
+                id3.style.marginLeft = c + "px"
+
+                if (a >= window.innerWidth - 320) {
+                    clearInterval(interval);
+                    alert("At 1 kazandi!");
+                    id1.style.marginLeft = 0 + "px"
+                    id2.style.marginLeft = 0 + "px"
+                    id3.style.marginLeft = 0 + "px"
+                }
+                if (b >= window.innerWidth - 320) {
+                    clearInterval(interval);
+                    alert("At 2 kazandi!");
+                    id1.style.marginLeft = 0 + "px"
+                    id2.style.marginLeft = 0 + "px"
+                    id3.style.marginLeft = 0 + "px"
+                }
+                if (c >= window.innerWidth - 320) {
+                    clearInterval(interval);
+                    alert("At 3 kazandi!");
+                    id1.style.marginLeft = 0 + "px"
+                    id2.style.marginLeft = 0 + "px"
+                    id3.style.marginLeft = 0 + "px"
+                }
+
+
+            }, 50);
+
+        }
+
+
+    </script>
+
+        
+
+</body>
+</html>
